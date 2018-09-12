@@ -1,0 +1,6 @@
+#!/bin/bash
+
+bash anaconda.sh
+source ~/.bashrc
+conda install -c anaconda tensorflow-gpu
+conda install pytorch torchvision cuda92 -c pytorch

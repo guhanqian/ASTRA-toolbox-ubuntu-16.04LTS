@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo apt install automake autoconf aptitude libboost-all-dev nvidia-cuda-toolkit
+sudo apt install gcc-4.9 g++-4.9
+#sudo bash install-gcc-4.9.3.sh

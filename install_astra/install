@@ -1,0 +1,24 @@
+#!/bin/bash
+
+sudo bash install_nvidia_driver
+cd Desktop/install_astra
+sudo bash install_anaconda
+sudo bash install_matlab
+sudo bash install_astra_prereq
+sudo bash install_cuda
+
+sudo cp -r astra /usr/local/MATLAB/R2017b
+sudo chmod -r 755 /usr/local/MATLAB/
+
+cd /usr/local/MATLAB/R2017b/astra/build/linux/
+
+sudo ./autogen.sh
+sudo ./configure --with-cuda=/usr/local/cuda \
+            --with-matlab=/usr/local/MATLAB/R2017b \
+            --prefix=$HOME/astra \
+            --with-install-type=module
+sudo make
+sudo make install
+
+
+
